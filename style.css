@@ -24,6 +24,7 @@ body {
     padding: 0 20px;
 }
 
+/* --- Desktop Styles --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -127,127 +128,6 @@ body {
     object-fit: contain;
 }
 
-
-@media (max-width: 1024px) {
-    /* Container adjustment */
-    .container {
-        padding: 0 15px;
-    }
-
-    /* Hero Section */
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 0;
-    }
-    .hero-text {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-    .hero-text h1 {
-        font-size: 36px; 
-    }
-    .hero-img {
-        justify-content: center;
-    }
-
-  
-    .brands {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        justify-items: center;
-    }
-
-    /* Services Grid - 1 column */
-    .services-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .service-card {
-        padding: 30px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    
-    .cases-black-box {
-        flex-direction: column;
-        padding: 40px 30px;
-        gap: 40px;
-    }
-    .vertical-divider {
-        width: 100%;
-        height: 1px;
-    }
-
-    /* CTA Section */
-    .cta-grey-box {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-    .cta-illustration {
-        position: static; 
-        transform: none;
-        margin-top: 30px;
-    }
-    .cta-illustration img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    /* Team Grid - 1 column */
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Contact Section */
-    .contact-grey-box {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-    .contact-form {
-        width: 100%;
-    }
-    .contact-illustration {
-        display: none; 
-    }
-
-    /* Working Process */
-    .process-item {
-        padding: 30px 20px;
-    }
-    .process-header h3 {
-        font-size: 20px;
-    }
-    .process-num {
-        font-size: 30px;
-    }
-
-    /* Footer */
-    .footer-top {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .footer-middle {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-    .footer-newsletter {
-        flex-direction: column;
-        width: 100%;
-    }
-    .footer-newsletter input {
-        width: 100%;
-    }
-}
 .section-header { 
     display: flex; 
     align-items: center; 
@@ -392,25 +272,6 @@ body {
     width: 1px;
     height: 160px;
     background-color: white;
-}
-
-@media (max-width: 1024px) {
-    .cta-illustration {
-        display: none;
-    }
-    .cta-content {
-        max-width: 100%;
-        text-align: center;
-    }
-    .cases-black-box {
-        flex-direction: column;
-        text-align: left;
-    }
-    .vertical-divider {
-        width: 100%;
-        height: 1px;
-        margin: 40px 0;
-    }
 }
 
 .process-item {
@@ -566,18 +427,6 @@ body {
     display: flex;
     justify-content: flex-end;
     margin-top: 40px;
-}
-
-@media (max-width: 1024px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 .team-cta { display: flex; justify-content: flex-end; margin-top: 40px; }
@@ -799,3 +648,51 @@ input[type="radio"] {
 
 .footer-bottom p { font-size: 16px; }
 .footer-bottom a { color: white; margin-left: 20px; }
+
+/* =========================================
+   MEDIA QUERIES 
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .container { padding: 0 15px; }
+
+    .navbar { flex-direction: column; gap: 20px; }
+
+    .hero { flex-direction: column; text-align: center; }
+    .hero-text { max-width: 100%; margin-bottom: 30px; }
+    .hero-text h1 { font-size: 40px; }
+    .hero-img { justify-content: center; }
+
+    .brands { flex-wrap: wrap; gap: 20px; justify-content: center; }
+
+    .services-grid, .team-grid { grid-template-columns: 1fr; }
+
+    .section-header { flex-direction: column; gap: 15px; text-align: center; margin: 40px 0; }
+
+    
+    .cta-grey-box, .contact-grey-box { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 40px 20px; 
+    }
+    
+    .cta-illustration, .contact-illustration { 
+        position: static; 
+        transform: none; 
+        margin-top: 20px; 
+    }
+    
+    .cta-illustration img, .contact-illustration img { 
+        width: 100%; 
+        max-width: 300px; 
+    }
+
+    .cases-black-box { flex-direction: column; gap: 30px; }
+    .vertical-divider { width: 100%; height: 1px; }
+
+    .contact-form { width: 100%; }
+
+    .footer-top, .footer-middle { flex-direction: column; text-align: center; gap: 30px; }
+    .footer-links { flex-direction: column; gap: 10px; }
+    .footer-newsletter { flex-direction: column; width: 100%; }
+}
